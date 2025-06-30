@@ -26,14 +26,14 @@ Gao, Le, et al. "Single-neuron projectome of mouse prefrontal cortex." Nature ne
 
 ## Code Execution
 train the DDPM：
-```
-python DDPM_train.py --dataroot ${dataroot} --model_dir${model_dir} --device ${device}
+```bash
+python DDPM_train.py --dataroot ${dataroot} --model_dir$ {model_dir} --device ${device}
 ```
 train the Auxiliary CNN：
-```
+```bash
 python Auxiliary_train.py
 ```
 generate new neuron morphology:
-```
-python morphology_gen.py --dataroot ${dataroot} --model${model} --device ${device} --generate_dir ${generate_dir}
+```bash
+python morphology_gen.py --dataroot ${dataroot} --model$ {model} --device ${device} --generate_dir ${generate_dir}
 ```
