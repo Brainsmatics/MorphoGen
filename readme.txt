@@ -1,13 +1,13 @@
-# MorphGen
+# MorphoGen
 
 ## Overview
 Here we introduce the environment dependencies, datasets used, file description, and the code execution.
 
 ## Dependencies
-python==3.8.5
-pytorch==1.8.2
-torchvision==0.9.2
-cudatoolkit==11.1
+python==3.8
+pytorch==2.0.0
+torchvision==0.15.1
+cudatoolkit==12.2
 
 ## Dataset
 Neuron data is sourced from the study:  
@@ -26,11 +26,14 @@ Gao, Le, et al. "Single-neuron projectome of mouse prefrontal cortex." Nature ne
 
 ## Code Execution
 train the DDPM：
+```
 python DDPM_train.py --dataroot ${dataroot} --model_dir${model_dir} --device ${device}
-
+```
 train the Auxiliary CNN：
+```
 python Auxiliary_train.py
-
+```
 generate new neuron morphology:
+```
 python morphology_gen.py --dataroot ${dataroot} --model${model} --device ${device} --generate_dir ${generate_dir}
-
+```
