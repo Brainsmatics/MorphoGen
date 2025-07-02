@@ -15,9 +15,7 @@ from models.dit3d import DiT3D_models
 from models.dit3d_window_attn import DiT3D_models_WindAttn
 from tensorboardX import SummaryWriter
 os.environ["CUDA_VISIBLE_DEVICES"] = "2"
-'''
-some utils
-'''
+
 @torch.no_grad()
 def update_ema(ema_model, model, decay=0.9999):
     """
@@ -27,7 +25,6 @@ def update_ema(ema_model, model, decay=0.9999):
     model_params = OrderedDict(model.named_parameters())
 
     for name, param in model_params.items():
-        # TODO: Consider applying only to params that require_grad to avoid small numerical changes of pos_embed
         if name.startswith('model.module'):
             name = name.replace('model.module.', 'model.')
         ema_params[name].mul_(decay).add_(param.data, alpha=1 - decay)
@@ -358,8 +355,6 @@ class GaussianDiffusion:
 
         assert losses.shape == torch.Size([B])
         return losses
-
-    '''debug'''
 
     def _prior_bpd(self, x_start):
 
