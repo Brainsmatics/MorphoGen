@@ -1,13 +1,19 @@
 # MorphoGen
-
-## Overview
-Here we introduce the environment dependencies, datasets used, file description, and the code execution.
+Efficient Unconditional Generation of Long-Range Projection Neuronal Morphology via a Global-to-Local Framework. Paper is [here](www.baidu.com). 
+Code is almost one-click runnable.
+Below we introduce the environment dependencies, file description, datasets used, and the code execution.
 
 ## Dependencies
-python==3.8.5
-pytorch==1.8.2
-torchvision==0.9.2
-cudatoolkit==11.1
+python==3.8.5, pytorch==1.8.2, torchvision==0.9.2, cudatoolkit==11.1
+
+See `requirements.txt` for detailed environment specifications.
+
+## File Description
+- `sub_process.py`: Converts raw SWC files to standardized point cloud data.
+- `distort.py`: Distorts true branches to learn the mapping back to original state.
+- `DDPM_train.py`: Trains the denoising diffusion probabilistic model to predict global structures.
+- `Auxiliary_train.py`: Trains the auxiliary CNN networks to optimize the local structures.
+- `morphology_gen.py`: Generates new morphology point clouds and converts into SWC files.
 
 ## Dataset
 Neuron data is sourced from the study:  
@@ -16,13 +22,6 @@ Gao, Le, et al. "Single-neuron projectome of mouse prefrontal cortex." Nature ne
 - **CT subtypes (45-52)**: 1,085 neurons (all subtypes)  
 - **PT subtypes (57-64)**: 1,005 neurons  
 - **IT subtypes (34-44)**: 985 neurons  
-
-## File Description
-- `sub_process.py`: Converts raw SWC files to standardized point cloud data.
-- `distort.py`: Distorts true branches to learn the mapping back to original state.
-- `DDPM_train.py`: Trains the denoising diffusion probabilistic model to predict global structures.
-- `Auxiliary_train.py`: Trains the auxiliary CNN networks to optimize the local structures.
-- `morphology_gen.py`: Generates new morphology point clouds and converts into SWC files.
 
 ## Code Execution
 train the DDPM：
