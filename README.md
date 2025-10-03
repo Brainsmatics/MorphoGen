@@ -1,7 +1,7 @@
 # MorphoGen
 Efficient Unconditional Generation of Long-Range Projection Neuronal Morphology via a Global-to-Local Framework. 
 Code is almost one-click runnable.
-Below we introduce the environment dependencies, file description, datasets used, and the code execution. Paper is [here](www.baidu.com). 
+Below we introduce the environment dependencies, file description, datasets used, and the code execution. Paper is [here](https://iccv.thecvf.com/virtual/2025/poster/49). 
 
 ## Dependencies
 python==3.8.5, pytorch==1.8.2, torchvision==0.9.2, cudatoolkit==11.1
@@ -38,6 +38,7 @@ python morphology_gen.py --dataroot ${dataroot} --model${model} --device ${devic
 
 ## Citation
 If you find this repository useful, please cite our paper:
+
 
 ## Acknowledgement
 Thanks for the wonderful work [DiT-3D](https://github.com/DiT-3D/DiT-3D).
